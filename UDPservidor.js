@@ -24,7 +24,9 @@ server.on('message', (msg, rinfo) => {
       )
     );
     server.send(messageBuffer, rinfo.port, rinfo.address, (err) => {
-      console.log(err);
+      if(err){
+        console.log(err);
+      }
     });
 });
 server.bind(41234);

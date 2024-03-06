@@ -25,7 +25,9 @@ rl.question('Informe o valor original, em reais. \n', (res1) => {
         message.moeda = res2;
         const messageBuffer = Buffer.from(JSON.stringify(message));
         client.send(messageBuffer, 41234, 'localhost', (err) => {
-            console.log(err);
+            if(err){
+                console.log(err);
+            }
         });
         rl.close();
     });
